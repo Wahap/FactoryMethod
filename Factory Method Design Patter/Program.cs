@@ -10,6 +10,15 @@ namespace Factory_Method_Design_Patter
     {
         static void Main(string[] args)
         {
+            IPaymentGateway gateway = null;
+            PaymentGatewayFactory pgateway = new PaymentGatewayFactory();
+            gateway = pgateway.GetGateway(BankType.BankA);
+
+            gateway.MakePayment();
+
+            gateway = pgateway.GetGateway(BankType.BankA);
+            gateway.MakePayment();
+
         }
     }
 }
